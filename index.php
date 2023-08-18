@@ -59,13 +59,16 @@ $carteles = array(
 <body class="w-full">
 
     <?php foreach ($carteles as $cartel) { ?>
-        <div class="mx-auto my-2 border-delta-500 border flex items-center relative " style="width: 150mm;height:50mm;">
+        <div class="mx-auto my-2 border-delta-500-10 border flex items-center relative break-inside-avoid" style="width: 150mm;height:50mm;">
             <h1 class="ml-6 font-bold text-3xl text-gray-700">
                 <?php if (isset($cartel['numero'])) { ?>
                     <span class="text-delta-500"><?php echo ($cartel['numero']); ?></span>-<?php } ?><span><?php echo ($cartel['nombre']); ?></span>
             </h1>
-            <div class="absolute right-0 bottom-0">
-               <img src="" alt="">
+            <div class="absolute right-[-20px] bottom-0">
+                <img src="./abutments/<?php echo ($cartel['imagen'])?>.svg" alt="" style="height:50mm; width:50mm;">
+            </div>
+            <div class="absolute left-0 bottom-[7.5mm] opacity-10">
+                <img src="https://deltaabutments.es/imgs/delta_svg_300.svg" alt="" style="height: 35mm;">
             </div>
         </div>
     <?php
