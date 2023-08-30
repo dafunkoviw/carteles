@@ -3,7 +3,7 @@
 $carteles = array(
     array('numero' => '01', 'nombre' => 'Scanbody', 'imagen' => 'sb'),
     array('numero' => '02', 'nombre' => 'Análogo', 'imagen' => 'an'),
-    array('numero' => '04 / 05', 'nombre' => 'Calcinable', 'imagen' => 'cal'),
+    array('numero' => '04-05', 'nombre' => 'Calcinable', 'imagen' => 'cal'),
     array('numero' => '06', 'nombre' => 'Transfer', 'imagen' => 'tran'),
     array('numero' => '08', 'nombre' => 'Tapón Protección', 'imagen' => 'tapon'),
     array('numero' => '09', 'nombre' => 'Tornillo Clínica', 'imagen' => 'tcl'),
@@ -33,7 +33,7 @@ $carteles = array(
 
 
 <!DOCTYPE html>
-<html lang="en" class="w-full">
+<html lang="en" class="w-[210mm]">
 
 <head>
     <title>Carteles</title>
@@ -56,19 +56,41 @@ $carteles = array(
 
 </head>
 
-<body class="w-full">
-
+<body class="w-[210mm]">
     <?php foreach ($carteles as $cartel) { ?>
-        <div class="mx-auto my-2 border-delta-500-10 border flex items-center relative break-inside-avoid" style="width: 150mm;height:50mm;">
-            <h1 class="ml-6 font-bold text-3xl text-gray-700">
-                <?php if (isset($cartel['numero'])) { ?>
-                    <span class="text-delta-500"><?php echo ($cartel['numero']); ?></span>-<?php } ?><span><?php echo ($cartel['nombre']); ?></span>
-            </h1>
-            <div class="absolute right-[-20px] bottom-0">
-                <img src="./abutments/<?php echo ($cartel['imagen'])?>.svg" alt="" style="height:50mm; width:50mm;">
-            </div>
-            <div class="absolute left-0 bottom-[7.5mm] opacity-10">
-                <img src="https://deltaabutments.es/imgs/delta_svg_300.svg" alt="" style="height: 35mm;">
+        <div class="h-[297mm] grid place-content-center">
+
+            <div class="p-[10mm] border-delta-500-10 flex items-center justify-between relative" style="width: 150mm;height:100mm;">
+                <div class="w-5/6">
+                    <h1 class=" font-bold text-6xl text-gray-700">
+                        <?php if (isset($cartel['numero'])) { ?>
+                            <span class="text-delta-500"><?php echo ($cartel['numero']); ?></span><?php } ?>
+                    </h1>
+                    <h2 class="text-3xl"><span><?php echo ($cartel['nombre']); ?></span></h2>
+                </div>
+                <div class="">
+                    <img src="./abutments/<?php echo ($cartel['imagen']) ?>.svg" alt="" style=" width:75mm;">
+                </div>
+                <div class="absolute left-0 bottom-[25mm] opacity-10 left-[10mm]">
+                    <img src="https://deltaabutments.es/imgs/delta_svg_300.svg" alt="" style="height: 40mm;">
+                </div>
+
+                <!-- lineas -->
+                
+                <div class="absolute w-[20mm] h-[20mm] border-l border-black bottom-[-25mm] left-0"></div>
+                <div class="absolute w-[20mm] h-[20mm] border-r border-black bottom-[-25mm] right-0"></div>
+
+                <div class="absolute w-[20mm] h-[20mm] border-l border-black top-[-25mm] left-0"></div>
+                <div class="absolute w-[20mm] h-[20mm] border-r border-black top-[-25mm] right-0"></div>
+                
+                
+                <div class="absolute w-[20mm] h-[20mm] border-b border-black bottom-0 right-[-25mm]"></div>
+                <div class="absolute w-[20mm] h-[20mm] border-b border-black bottom-0 left-[-25mm]"></div>
+
+                <div class="absolute w-[20mm] h-[20mm] border-t border-black top-0 right-[-25mm]"></div>
+                <div class="absolute w-[20mm] h-[20mm] border-t border-black top-0 left-[-25mm]"></div>
+
+
             </div>
         </div>
     <?php
